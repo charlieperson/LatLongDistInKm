@@ -1,3 +1,8 @@
+function LatLong() {
+  var obj = Object.create(methods);
+  return obj;
+}
+
 var methods = {
   getDistanceFromLatLonInKm:  function (lat1,lon1,lat2,lon2){
       var R = 6371; // Radius of the earth in km
@@ -15,12 +20,4 @@ var methods = {
   deg2rad: function (deg){
     return deg * (Math.PI / 180);
   }
-};
-
-var latLong = Object.create(methods);
-var mapPoint = Object.create(latLong);
-
-mapPoint.set = function(lat, long) {
-  mapPoint.lat = lat;
-  mapPoint.long = long;
 };
